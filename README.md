@@ -12,6 +12,7 @@
 
 ### Example usage:
 `https://timestamp-ms.herokuapp.com/December%2015,%202015`
+
 `https://timestamp-ms.herokuapp.com/1450137600`
 
 ### Example output:
@@ -21,14 +22,16 @@
     "natural": "December 15, 2015"
 }
 ```
-----
+
+---
+
 ## Running Locally
 
 Make sure you have [Node.js](http://nodejs.org/) installed.
 
 ```sh
-$ git clone https://github.com/DavOnGit/Request-Header-Parser.git # or clone your own fork
-$ cd Request-Header-Parser
+$ git clone https://github.com/DavOnGit/timestamp-microservice.git # or clone your own fork
+$ cd timestamp-microservice
 $ npm install
 $ npm start
 ```
