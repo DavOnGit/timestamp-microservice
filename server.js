@@ -2,15 +2,14 @@ const moment = require('moment');
 const express = require('express');
 const app = express();
 
+app.set('strict routing', true);
+app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
-
-/*app.get('/', function(req,res) {
-    res.send('Hello World!');
-});*/
+app.set('json spaces', 4);
 
 app.get('/:id', function(req, res) {
     var date,
-    format = {unix: null, natural:null},
+    format = {unix: null, natural: null},
     par = req.params.id;
     
     const filter = [moment.ISO_8601,"MM-DD-YYYY",'MM-DD-YY',"MM DD YYYY",'MM DD YY','LL','ll','MMMM DD, YYYY','MMM DD, YYYY'];
@@ -25,8 +24,11 @@ app.get('/:id', function(req, res) {
     format.unix = date ? date.format('x') : null;
     format.natural = date ? date.format('LL') : null;
     
-  res.send(JSON.stringify(format));
+    res.setHeader('Content-Type', 'application/json');
+    res.send(format);
 });
 
 
-app.listen(process.env.PORT || 8080);
+app.listen( app.get('port'), () => {
+    console.log('listening on port: ' + app.get('port'));
+});

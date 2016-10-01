@@ -1,7 +1,7 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en">
   <head>
-    <title>Chat Example</title>
+    <title>Timestamp microservice</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheet/bootstrap.min.css">
   </head>
@@ -11,17 +11,26 @@
         <h1 class='text-center'>Timestamp microservice</h1>
     </div>
     <div class="container">
-        <p>User stories:</p>
+        <p>In this App:</p>
         <ol>
             <li>I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016)</li>
             <li>If it does, it returns both the Unix timestamp and the natural language form of that date.</li>
             <li>If it does not contain a date or Unix timestamp, it returns null for those properties.</li>
         </ol>
         <h3>Example usage:</h3>
-        <p>https://timestamp-ms.herokuapp.com/December%2015,%202015</p>
-        <p>https://timestamp-ms.herokuapp.com/1450137600</p>
+        <p><a href='/December%2015,%202015'>https://timestamp-ms.herokuapp.com/December%2015,%202015</a></p>
+        <p><a href='//1450137600'>https://timestamp-ms.herokuapp.com/1450137600</a></p>
+        
         <h3>Example output:</h3>
-        <p>{ "unix": 1450137600, "natural": "December 15, 2015" }</p>
+        <p>
+          <code>{</code>
+          <br>
+          <code>&nbsp;&nbsp;&nbsp;"unix": 1450137600,</code>
+          <br>
+          <code>&nbsp;&nbsp;&nbsp;"natural": "December 15, 2015"</code>
+          <br>
+          <code>}</code>
+        </p>
         
     </div>
     
